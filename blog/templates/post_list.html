@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% for post in posts %}
+    <article class="my-4 post-card">
+        <div class="row">
+            <!-- Верхняя часть -->
+            <div class="col-md-8">
+                <header class="mb-4">
+                    <div class="title">
+                        <h2 class="fw-bold">{{ post.title }}</h2>
+                    </div>
+                </header>
+            </div>
+
+            <!-- Боковая панель для автора и даты -->
+            <div class="col-md-4">
+                <div class="meta text-muted">
+                    <p class="author"><span class="name">{{ post.author }}</span></p>
+                    <p class="published-date">{{ post.published_date }}</p>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4"> <!-- Горизонтальная линия -->
+        <div class="row content">
+            <p>
+                {{ post.text|slice:":150"|linebreaksbr }}
+                {% if post.text|length > 150 %}...{% endif %}
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <header class="mb-4">
+                    <a href="{{ post.get_absolute_url }}" class="btn bg-dark my-btn-class">continue reading</a>
+                </header>
+            </div>
+
+            <!-- Боковая панель для автора и даты -->
+            <div class="col-md-4">
+                <div class="text-muted">
+                    <p class="text-muted">Comments: {{ post.comments.count }}</p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+{% endblock %}

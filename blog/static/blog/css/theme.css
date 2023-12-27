@@ -1,0 +1,100 @@
+/* theme.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    line-height: 1.6;
+    margin: 0;
+    background: linear-gradient(45deg, #2c3e50 25%, transparent 25%, transparent 75%, #2c3e50 75%, #2c3e50), linear-gradient(45deg, #2c3e50 25%, transparent 25%, transparent 75%, #2c3e50 75%, #2c3e50);
+    background-size: 20px 20px;
+}
+
+.blog-header {
+    background-color: #4CAF50;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid #2c3e50;
+}
+
+.blog-title {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+article {
+    margin: 20px 0;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: none;
+}
+
+.post-card {
+    background: #fff; /* белый фон карточки */
+    border: 1px solid #ddd; /* цвет и толщина границы */
+    border-radius: 8px; /* скругление углов */
+    padding: 15px; /* внутренний отступ */
+    margin-bottom: 20px; /* отступ между карточками */
+    transition: transform 0.3s, box-shadow 0.3s; /* добавление анимации при наведении */
+
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.title h2 {
+    font-size: 24px; /* Увеличим размер заголовка */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.meta {
+    border-left: 1px solid #ddd; /* Добавим вертикальную линию между заголовком и мета-информацией */
+    padding-left: 15px; /* Добавим отступ слева для мета-информации */
+}
+
+.author {
+    font-size: 18px; /* Размер шрифта автора */
+}
+
+.published-date {
+    font-size: 14px; /* Размер шрифта даты */
+    margin-top: 5px; /* Добавим отступ сверху для даты */
+}
+
+
+hr {
+    border: 1px solid #ddd; /* Горизонтальная линия */
+}
+
+.login-form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+    min-width: 100vh;
+}
+
+.post-detail {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000;
+    min-width: 100vh;
+}
+
+.my-btn-class {
+    color: #fff !important; 
+}

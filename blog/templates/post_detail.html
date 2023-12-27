@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        
+
+        <div class="post-detail">
+            
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            
+            {% if request.user == post.author %}
+            {% if post.published_date %}
+                <div class="date">{{ post.published_date }}</div>
+            {% else %}
+                <a href="{% url 'post_publish' id=post.id %}" class="btn bg-dark my-btn-class">publish</a>
+            {% endif %}
+
+                <a href="{% url 'post_edit' id=post.id %}" class="btn bg-dark my-btn-class">edit</a>
+
+            {% endif %}    
+            
+            <hr>
+           
+            {% for comment in post.comments.all %}
+                <div class="comment">
+                    <strong class="author">{{ comment.author }}</strong>
+                    <span class="date">{{ comment.created_date }}</span>
+                    <p class="text">{{ comment.text|linebreaksbr }}</p>
+                </div>
+            {% empty %}
+                <p>No comments</p>
+            {% endfor %}
+            <hr>
+
+            <a href="{% url 'add_comment' id=post.id %}" class="btn bg-dark my-btn-class">add comment</a>
+
+        </div>
+    </div>
+{% endblock %}
